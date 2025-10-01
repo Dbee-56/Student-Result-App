@@ -65,19 +65,19 @@ if uploaded_files and len(uploaded_files) == 3:
 
         for col in df.columns:
             try:
-                df[col] = pd.to_numeric(df[col], errors="ignore")
+                df[col] = pd.to_numeric(df[col])
             except Exception:
                 pass
 
         for col in df1.columns:
             try:
-                df1[col] = pd.to_numeric(df1[col], errors="ignore")
+                df1[col] = pd.to_numeric(df1[col])
             except Exception:
                 pass
 
         for col in df2.columns:
             try:
-                df2[col] = pd.to_numeric(df2[col], errors="ignore")
+                df2[col] = pd.to_numeric(df2[col])
             except Exception:
                 pass
 
@@ -350,5 +350,6 @@ if uploaded_files and len(uploaded_files) == 3:
 
 elif uploaded_files and len(uploaded_files) != 3:
     st.warning("⚠️ Please upload exactly **3 CSV/XLSX files**.")
+
 
 
