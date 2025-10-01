@@ -127,7 +127,7 @@ if uploaded_files and len(uploaded_files) == 3:
         sum_dict3["Geography"] = [len(df2[df2["Geography"]>=10]),len(df2[df2["Geography"]<10]),int(df2["Geography"].isnull().sum()),round(len(df2[df2["Geography"]>=10])/len(df2)*100,2)]
         sum_dict3["History"] = [len(df2[df2["History"]>=10]),len(df2[df2["History"]<10]),int(df2["History"].isnull().sum()),round(len(df2[df2["History"]>=10])/len(df2)*100,2)]
 
-        df_sum_scn = pd.DataFrame(sum_dict1)[["Criteria", "Hindi", "English", "Bio", "Physics", "Chemistry"]]
+        df_sum_scn = pd.DataFrame(sum_dict1)[["Criteria", "Hindi", "English", "Bio", "Physics", "Chemistry","Maths"]]
         df_sum_com = pd.DataFrame(sum_dict2)[["Criteria", "Hindi", "English", 'Accounts','Industrial Organization', 'Bussiness Studies']]
         df_sum_art = pd.DataFrame(sum_dict3)[["Criteria", "Hindi", "English", 'History', 'Political Science','Geography']]
 
@@ -350,6 +350,7 @@ if uploaded_files and len(uploaded_files) == 3:
 
 elif uploaded_files and len(uploaded_files) != 3:
     st.warning("⚠️ Please upload exactly **3 CSV/XLSX files**.")
+
 
 
 
